@@ -1,0 +1,77 @@
+
+<div style="text-align: center; background-color: aqua;">
+     <h1>Register</h1>
+<form action="/register" method="POST">
+    <div >
+        <label for="name"> Name</label>
+        <input type="text" id="name" name="name"
+         required >
+    </div>
+    <div>
+        <label for="email"> email</label>
+        <input type="email" id="email" name="email"
+         required >
+    </div>
+    <div>
+        <label for="password"> password</label>
+        <input type="password" id="password" name="password"
+         required >
+    </div>
+    <button type="submit"> Register </button>
+</form>
+<a href="/login"> login</a>
+</div>
+<style>
+    label{
+        font-size:30px ;
+        margin: 10px;
+    }
+    button{
+        font-size: 30px;
+        margin: 10px;
+    }
+    h1{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+</style>
+
+<script>
+    const mysql = require('mysql')
+
+const db = mysql.createConnection({
+    host: process.env.DATABASE_HOST,
+    user:process.env.DATABASE_USHER,
+    password:process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE,
+  });
+exports.register = (req, res) =>{
+
+    console.log(req.body);
+
+    const {name , email, password,}= req.body;
+
+    db.query('SELECT email FROM users WHERE email = ?' ,[email], (error,results) => {
+      if (error) {
+          console.log(error);
+      } 
+      if(results.length > 0) {
+          return res.rsnder('register' ,{
+              message:'that email is already in use'
+          });
+      } 
+      db.query('INSERT INTO users SET ?',  {name: name, email:email,password: password},(error,results) =>{
+        if(error) {
+            console.log(error);
+        } else{
+            console.log(results);
+            return res.render('register',{
+                message:'user registered'
+            });
+        }
+      })
+    });
+
+    
+}
+</script>

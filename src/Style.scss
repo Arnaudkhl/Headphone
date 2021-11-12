@@ -1,0 +1,181 @@
+body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color:black;
+    background-color:rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+    
+}
+/**********la partie catalogue***********/
+.dFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+       
+        box-sizing: border-box;
+        background-color:rgb(255, 255, 255);
+       
+      
+    }
+  
+    .logo{
+        font-size: 30px;
+        text-transform: uppercase;
+        color: rgb(0, 0, 0);
+      
+    }
+
+   i{
+       margin-left: 25px;
+       cursor: pointer;
+       
+      
+   }
+   .main_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 50px auto;
+    padding: 50px 0 0;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   }
+
+   .card{
+       width: 30%;
+       border-radius:15px ;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       position: relative;
+       transform:scale(.8) ;
+       transition: all .3s ease-in-out;
+       margin-bottom: 50px;
+       background-color:rgba(245, 230, 201, 0.438);
+   }
+   .card_img{
+       margin-top: -5vw;
+   }
+   img{
+       width: 280px;
+   }
+   .card_header{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       color:black;
+       margin: 25px 0;
+
+   }
+   h2{
+       font-size: 24px;
+   }
+   p{
+       font-size: 18px;
+       text-align: center;
+       color: black;
+       margin:8px ;
+       
+   }
+   .price{
+       font-size: 45px;
+       color:black;
+   }
+   span{
+       font-size: 18px;
+       display: inline-block;
+       vertical-align: top;
+   }
+   .card:hover{
+       background-color:rgb(245, 222, 179);
+       transform: scale(1.1);
+       cursor: pointer;
+   }
+   
+   .btn{
+    background-color: orange;
+    color:white;
+   }
+   .btn{
+     
+    width: 170px;
+    height: 60px;
+    font-size: 20px;
+    border-radius:35px ;
+    position: relative;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition:background trasnparent .3s ease;
+   overflow: hidden;
+}
+
+@media screen and (min-width:480px) {
+    .wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(10rem,10rem));
+    }
+    .card{
+        flex-direction: column;
+        text-align: center;
+        min-width: 15rem;
+        
+    } 
+  
+   
+   }
+.me-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*partie formulaire */
+.container2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color:white;
+    padding: 120px;
+}
+.titre{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 55px;
+   
+    
+}
+
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+     
+
+
+       
+
